@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0B23035F296C4A0E00998672 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B23035E296C4A0E00998672 /* Product.swift */; };
+		0BB935E7296D7396009BA02F /* ProductListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB935E6296D7396009BA02F /* ProductListScreen.swift */; };
+		0BB935EA296D7D14009BA02F /* ProductCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB935E9296D7D14009BA02F /* ProductCellView.swift */; };
+		0BB935EC296D891E009BA02F /* Locale+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB935EB296D891E009BA02F /* Locale+Extensions.swift */; };
 		0BC2A1FD2967071400158068 /* StoreAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC2A1FC2967071400158068 /* StoreAppApp.swift */; };
 		0BC2A1FF2967071400158068 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC2A1FE2967071400158068 /* ContentView.swift */; };
 		0BC2A2012967071700158068 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BC2A2002967071700158068 /* Assets.xcassets */; };
@@ -21,6 +24,9 @@
 
 /* Begin PBXFileReference section */
 		0B23035E296C4A0E00998672 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		0BB935E6296D7396009BA02F /* ProductListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListScreen.swift; sourceTree = "<group>"; };
+		0BB935E9296D7D14009BA02F /* ProductCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCellView.swift; sourceTree = "<group>"; };
+		0BB935EB296D891E009BA02F /* Locale+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Locale+Extensions.swift"; sourceTree = "<group>"; };
 		0BC2A1F92967071400158068 /* StoreApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BC2A1FC2967071400158068 /* StoreAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreAppApp.swift; sourceTree = "<group>"; };
 		0BC2A1FE2967071400158068 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +50,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0BB935E8296D7CEF009BA02F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0BB935E9296D7D14009BA02F /* ProductCellView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		0BC2A1F02967071400158068 = {
 			isa = PBXGroup;
 			children = (
@@ -63,6 +77,7 @@
 		0BC2A1FB2967071400158068 /* StoreApp */ = {
 			isa = PBXGroup;
 			children = (
+				0BB935E8296D7CEF009BA02F /* Views */,
 				0BC2A215296C39AE00158068 /* Screens */,
 				0BC2A210296C316B00158068 /* Models */,
 				0BC2A20D29670C8300158068 /* Clients */,
@@ -87,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				0BC2A20B296709D800158068 /* URL+Extensions.swift */,
+				0BB935EB296D891E009BA02F /* Locale+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -113,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				0BC2A216296C3B9B00158068 /* CategoryListScreen.swift */,
+				0BB935E6296D7396009BA02F /* ProductListScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -191,8 +208,11 @@
 				0B23035F296C4A0E00998672 /* Product.swift in Sources */,
 				0BC2A212296C318000158068 /* Category.swift in Sources */,
 				0BC2A1FF2967071400158068 /* ContentView.swift in Sources */,
+				0BB935EA296D7D14009BA02F /* ProductCellView.swift in Sources */,
+				0BB935E7296D7396009BA02F /* ProductListScreen.swift in Sources */,
 				0BC2A20C296709D800158068 /* URL+Extensions.swift in Sources */,
 				0BC2A1FD2967071400158068 /* StoreAppApp.swift in Sources */,
+				0BB935EC296D891E009BA02F /* Locale+Extensions.swift in Sources */,
 				0BC2A217296C3B9B00158068 /* CategoryListScreen.swift in Sources */,
 				0BC2A214296C338400158068 /* StoreModel.swift in Sources */,
 			);

@@ -13,30 +13,45 @@ struct CategoryListScreen: View {
     @State private var errorMessage = ""
     
     var body: some View {
-        VStack {
-            List(storeModel.categories,id: \.id){ category in
-                HStack{
-                    AsyncImage(url: category.image) { image in
-                        image.resizable()
-                            .frame(maxWidth: 100, maxHeight: 100)
-                            .clipShape(RoundedRectangle(cornerRadius: 10.0, style: .continuous))
-                    } placeholder: {
-                        ProgressView()
+        NavigationStack {
+            VStack {
+                List(storeModel.categories,id: \.id){ category in
+                    NavigationLink(value: category) {
+                        
+                        HStack{
+                            AsyncImage(url: category.image) { image in
+                                image.resizable()
+                                    .frame(maxWidth: 100, maxHeight: 100)
+                                    .clipShape(RoundedRectangle(cornerRadius: 10.0, style: .continuous))
+                            } placeholder: {
+                                ProgressView()
+                            }
+                            Text(category.name)
+                        }
+                        
+                        
+                    }.navigationDestination(for: Category.self) {category in
+                        ProductListScreen(category: category)
+                        
                     }
-                    Text(category.name)
-                }
-            }.task {
-                do {
-                    try await storeModel.fetchCategories()
-                } catch {
-                    errorMessage = error.localizedDescription
+                    
+                  
+                }.task {
+                    do {
+                        try await storeModel.fetchCategories()
+                    } catch {
+                        errorMessage = error.localizedDescription
+                    }
+                    
+                    
                 }
                 
-                
-            }
+                Text(errorMessage)
+            }.navigationTitle("Store")
             
-            Text(errorMessage)
+           
         }
+        
     }
 }
 
