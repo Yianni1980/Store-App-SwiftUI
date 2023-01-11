@@ -10,6 +10,7 @@ import SwiftUI
 struct ProductListScreen: View {
     let category:Category
     
+    @State private var isPresented = false
     @EnvironmentObject private var storeModel:StoreModel
 
     var body: some View {
@@ -26,12 +27,26 @@ struct ProductListScreen: View {
                 print(error)
             }
         }.navigationTitle(category.name)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Add Product") {
+                        isPresented = true
+                    }
+                }
+                
+                
+            }.sheet(isPresented: $isPresented) {
+                
+                AddProductScreen()
+            }
     }
 }
 
 struct ProductListScreen_Previews: PreviewProvider {
     static var previews: some View {
-        ProductListScreen(category: Category(id: 1, name: "Clothes", image: URL(string: "https://unsplash.com/photos/xXJ6utyoSw0")!))
-            .environmentObject(StoreModel())
+        NavigationStack{
+            ProductListScreen(category: Category(id: 1, name: "Clothes", image: URL(string: "https://unsplash.com/photos/xXJ6utyoSw0")!))
+                .environmentObject(StoreModel())
+        }
     }
 }
