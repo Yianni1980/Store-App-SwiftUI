@@ -59,8 +59,9 @@ class StoreHTTPClient {
                 throw  NetworkError.badURL
             }
             request.url  = url
-        case .post(_):
-            break
+        case .post(let data):
+            
+            request.httpBody = data
             
         case .delete:
             break

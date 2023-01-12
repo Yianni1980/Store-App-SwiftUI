@@ -23,8 +23,20 @@ struct AddProductScreen: View {
         
     }
     private func saveProduct(){
-       // guard let 
-        
+        guard let category = selectedCategory,
+        let imageURL = URL(string: imageUrl)
+        else {
+            return
+        }
+        let createProductRequest = CreateProductRequest(title: title, price: price, description: description, categoryId: category.id, images: [imageURL])
+        Task {
+            do {
+                try await storeModel.saveProduct(createProductRequest)
+                dismiss()
+            }catch {
+                errorMessage = "Unable to save product"
+            }
+        }
     }
     
     var body: some View {
@@ -56,7 +68,7 @@ struct AddProductScreen: View {
                             saveProduct()
                         }
                         
-                    }.disabled(isFormValid)
+                    }.disabled(!isFormValid)
                     
                 }
             }
